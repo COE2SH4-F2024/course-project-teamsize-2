@@ -12,5 +12,6 @@ Member 1 MacID: radheepg
 Member 1 StudentID: 400514077
 
 
-I took this as a solo project, and with permission from Dr. Chen, my project scope was reduced to the end of Iteration 2.
-
+I took this as a solo project, and with permission from Dr. Chen, my project scope was reduced to the end of 
+Iteration 2.
+The snake itself, and printing of the game board, utilizes the objPosArrayList class

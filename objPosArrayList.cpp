@@ -15,11 +15,25 @@ objPosArrayList::~objPosArrayList(){
     for(int i = 0; i < arrayCapacity; i++){
         delete[] &aList[i];
     }
-    delete[] &aList;
+    delete[] aList;
 }
 
 int objPosArrayList::getSize() const{
     return listSize;
+}
+
+int objPosArrayList::getObjX(int index) const{
+    return (aList[index].getObjPosX());
+}
+int objPosArrayList::getObjY(int index) const{
+    return (aList[index].getObjPosY());
+}
+
+void objPosArrayList::setObjX(int index, int xPos) const{
+    aList[index].setObjPosX(xPos);
+}
+void objPosArrayList::setObjY(int index, int yPos) const{
+    aList[index].setObjPosY(yPos);
 }
 
 void objPosArrayList::insertHead(objPos thisPos){

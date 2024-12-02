@@ -25,6 +25,10 @@ class objPosArrayList
         objPos getHeadElement(objPos &returnPos) const;
         objPos getTailElement(objPos &returnPos) const;
         objPos getElement(int index, objPos &returnPos) const;
+        int getObjX(int x) const;
+        int getObjY(int x) const;
+        void setObjX(int index, int xPos) const;
+        void setObjY(int index, int yPos) const;
 };
 
 #endif
