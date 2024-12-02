@@ -4,6 +4,7 @@ GameMechs::GameMechs()
 {
     bool exitflag;
     food.symbol = 'o';
+    score = 0;
     
 }
 
@@ -16,7 +17,6 @@ GameMechs::GameMechs(int boardX, int boardY)
     
 }
 
-// do you need a destructor?
 GameMechs::~GameMechs()
 {
     delete[] this;

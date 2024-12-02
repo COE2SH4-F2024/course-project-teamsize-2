@@ -74,6 +74,7 @@ void RunLogic(void)
     player->moveBody();
     objPos* tempObj = new objPos();
     if(player->bodyPositions->getHeadElement(*tempObj).getObjPosX() == gm->getFoodPosX() && player->bodyPositions->getHeadElement(*tempObj).getObjPosY() == gm->getFoodPosY()){
+        gm->incrementScore();
         gm->generateFood(player->getPlayerPos());
     }
 }
@@ -108,6 +109,7 @@ void DrawScreen(void)
         MacUILib_printf("\n");
     }
     MacUILib_printf("\nPress SPACE to quit");
+    MacUILib_printf("\nScore: %d", gm->getScore());
 }
 
 void LoopDelay(void)
