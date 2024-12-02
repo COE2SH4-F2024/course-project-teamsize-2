@@ -22,9 +22,9 @@ class objPosArrayList
         void removeHead();
         void removeTail();
         
-        objPos getHeadElement() const;
-        objPos getTailElement() const;
-        objPos getElement(int index) const;
+        objPos getHeadElement(objPos &returnPos) const;
+        objPos getTailElement(objPos &returnPos) const;
+        objPos getElement(int index, objPos &returnPos) const;
 };
 
 #endif

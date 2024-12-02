@@ -1,11 +1,12 @@
 #include "objPos.h"
+#include "stdlib.h"
 
 objPos::objPos()
 {
     pos = new Pos;
-    pos->x = 0;
-    pos->y = 0;
-    symbol = 0; //NULL
+    pos->x = 3;
+    pos->y = 3;
+    symbol = '*'; //NULL
 }
 
 objPos::objPos(int xPos, int yPos, char sym)
@@ -16,10 +17,29 @@ objPos::objPos(int xPos, int yPos, char sym)
     symbol = sym;
 }
 
-// Respect the rule of six / minimum four
-// [TODO] Implement the missing special member functions to meet the minimum four rule
+//RULE OF 4
 
+objPos::~objPos()
+{
+    delete[] pos;
+}
 
+objPos::objPos(const objPos& other){
+    pos = new Pos;
+    pos->x = other.pos->x;
+    pos->y = other.pos->y;
+    symbol = other.symbol;
+
+}
+objPos& objPos::operator = (const objPos &other){
+    if(this != NULL){
+        pos = new Pos;
+        pos->x = other.pos->x;
+        pos->y = other.pos->y;
+        symbol = other.symbol;
+    }
+    return *this;
+}
 
 
 void objPos::setObjPos(objPos o)
@@ -29,11 +49,27 @@ void objPos::setObjPos(objPos o)
     symbol = o.symbol;
 }
 
+void objPos::setObjPosX(int xPos){
+    pos->x = xPos;
+}
+
+void objPos::setObjPosY(int yPos){
+    pos->y = yPos;
+}
+
 void objPos::setObjPos(int xPos, int yPos, char sym)
 {
     pos->x = xPos;
     pos->y = yPos;
     symbol = sym;
+}
+
+int objPos::getObjPosX() const{
+    return pos->x;
+}
+
+int objPos::getObjPosY() const{
+    return pos->y;
 }
 
 objPos objPos::getObjPos() const
